@@ -138,13 +138,10 @@ def main():
                     mlflow.log_param(param_name, param_value)
             
             # Log model to MLflow
-            # mlflow.sklearn.log_model(clf, "model")
-            input_example = X_test[:5] if not scipy.sparse.issparse(X_test) else X_test[:5].toarray()
-            model_info = mlflow.sklearn.log_model(clf, name="model", input_example=input_example)
+            mlflow.sklearn.log_model(clf, "model")
             
             # Save model info
-            save_model_info(model_info.model_id, "model", 'reports/experiment_info.json')
-            
+            save_model_info(run.info.run_id, "model", 'reports/experiment_info.json')
             # Log the metrics file to MLflow
             mlflow.log_artifact('reports/metrics.json')
 
