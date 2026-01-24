@@ -78,7 +78,7 @@ def normalize_text(text):
 
 # Below code block is for production use
 # -------------------------------------------------------------------------------------
-dagshub_token = os.getenv("DAGSHUB_TOKEN")
+dagshub_token = os.getenv("CAPSTONE_TEST")
 if not dagshub_token:
     raise EnvironmentError("Dags hub environment variable is not set")
 
