@@ -75,16 +75,16 @@ def main():
     try:
         load_dotenv()
         bucket_name = os.environ['AWS_BUCKET']
-        access_key = os.environ['AWS_ACCESS_KEY']
-        access_key_secret = os.environ['AWS_SECRET_KEY']
+        access_key = os.environ['AWS_ACCESS_KEY_ID']
+        access_key_secret = os.environ['AWS_SECRET_ACCESS_KEY']
         params = load_params(params_path='params.yaml')
         test_size = params['data_ingestion']['test_size']
         # test_size = 0.2
         
         
-        df = load_data(data_url='https://raw.githubusercontent.com/Bilal-Shabbir/Datasets/refs/heads/main/data.csv')
-        # s3 = s3_connection.s3_operations(bucket_name, access_key, access_key_secret)
-        # df = s3.fetch_file_from_s3("data.csv")
+        # df = load_data(data_url='https://raw.githubusercontent.com/Bilal-Shabbir/Datasets/refs/heads/main/data.csv')
+        s3 = s3_connection.s3_operations(bucket_name, access_key, access_key_secret)
+        df = s3.fetch_file_from_s3("data.csv")
 
 
 

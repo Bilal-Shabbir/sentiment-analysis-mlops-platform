@@ -10,8 +10,8 @@ jobs:
       DAGSHUB_OWNER: ${{ secrets.DAGSHUB_OWNER }}
       DAGSHUB_REPO: ${{ secrets.DAGSHUB_REPO }}
       AWS_BUCKET: ${{ secrets.AWS_BUCKET }}
-      AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
-      AWS_SECRET_KEY: ${{ secrets.AWS_SECRET_KEY }}
+      AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
     steps:
       - name: checkout code
