@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: sentiment_analysis_megatron_proj
-        image: 937206803011.dkr.ecr.us-east-1.amazonaws.com/sentiment_analysis_megatron_proj
+        image: 937206803011.dkr.ecr.us-east-1.amazonaws.com/sentiment_analysis_megatron_proj:latest
         ports:
         - containerPort: 5000
         resources:
