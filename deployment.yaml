@@ -27,11 +27,21 @@ spec:
             memory: "512Mi"
             cpu: "1"
         env:
-        - name: CAPSTONE_TEST
-          valueFrom:
-            secretKeyRef:
-              name: capstone-secret
-              key: CAPSTONE_TEST
+          - name: CAPSTONE_TEST
+            valueFrom:
+              secretKeyRef:
+                name: capstone-secret
+                key: CAPSTONE_TEST
+          - name: DAGSHUB_OWNER
+            valueFrom:
+              secretKeyRef:
+                name: capstone-secret
+                key: DAGSHUB_OWNER
+          - name: DAGSHUB_REPO
+            valueFrom:
+              secretKeyRef:
+                name: capstone-secret
+                key: DAGSHUB_REPO
 
 ---
 apiVersion: v1
